@@ -1,12 +1,16 @@
-import React, { Component, Suspense } from 'react'
+import React, { Component } from 'react'
 import { Navbar, Icon, Nav } from 'rsuite';
+import Graficas from '../Graficas/Graficas';
 import './App.css';
 
+/**
+ * Componente principal del app, redirije a todo el programa
+ */
 class App extends Component{
   constructor(props){
     super(props);
     this.state={
-      active: '0'
+      active: 0
     }
   }
 
@@ -15,24 +19,27 @@ class App extends Component{
       <div className='App'>
         <Navbar appearance="inverse">
           <Navbar.Header>
-            <h3 className="navbar-brand logo"> Controlador </h3>
+            <h3 className="navbar-brand"> Controlador </h3>
           </Navbar.Header>
           <Navbar.Body>
             <Nav onSelect={this.onSelect} activeKey={this.state.active}>
-              <Nav.Item eventKey="0" icon={<Icon icon="home" />}> Procesos </Nav.Item>
-              <Nav.Item eventKey="1" icon={<Icon icon="area-chart" />}> Gráficas </Nav.Item>
+              <Nav.Item eventKey={0} icon={<Icon icon="home" />}> Procesos </Nav.Item>
+              <Nav.Item eventKey={1} icon={<Icon icon="area-chart" />}> Gráficas </Nav.Item>
             </Nav>
           </Navbar.Body>
         </Navbar>
         {
-          this.state.active === '0' ?
+          this.state.active === 0 ?
             <h1>Procesos</h1> :
-            <h1>graficas</h1>
+            <Graficas/>
         }
       </div>
     )
   }
-
+  /**
+   * Selecciona el item que se selecciona en el navbar
+   * @param {string} active simbolo activo
+   */
   onSelect = (active) => {
     this.setState({ active: active });
   }
