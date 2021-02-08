@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Navbar, Icon, Nav } from 'rsuite';
 import Graficas from '../Graficas/Graficas';
+import Procesos from '../Procesos/Procesos';
 import './App.css';
 
 /**
@@ -30,7 +31,7 @@ class App extends Component{
         </Navbar>
         {
           this.state.active === 0 ?
-            <h1>Procesos</h1> :
+            <Procesos/> :
             <Graficas/>
         }
       </div>

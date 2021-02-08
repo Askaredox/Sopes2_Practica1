@@ -1,0 +1,9 @@
+.table-v{
+    /*display: flex;*/
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+

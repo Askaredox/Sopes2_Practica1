@@ -32,10 +32,11 @@ class Graficas extends React.Component {
         let datos = this.state.server;
         datos = datos.slice(1);
 
-        Service.watch().then(value => {
-            datos.push(value);
-            this.setState({ server: datos })
-        });
+        if(this.state.server)
+            Service.watch().then(value => {
+                datos.push(value);
+                this.setState({ server: datos })
+            });
 
     }
 
@@ -46,7 +47,7 @@ class Graficas extends React.Component {
                 <h3>Servidor</h3>
                 <LineChart width={600} height={300} data={this.state.server} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                     <Line type="monotone" dataKey="ram" stroke="#8884d8" isAnimationActive={false} />
-                    <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
+                    <CartesianGrid stroke="#ccc" strokeDasharray="10 10" />
                     <Legend />
                     <XAxis dataKey="name" />
                     <YAxis />
