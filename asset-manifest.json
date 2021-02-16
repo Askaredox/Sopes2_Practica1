@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Sopes2_Practica1/static/css/main.22aea4f7.chunk.css",
+    "main.js": "/Sopes2_Practica1/static/js/main.d6790fbf.chunk.js",
+    "main.js.map": "/Sopes2_Practica1/static/js/main.d6790fbf.chunk.js.map",
+    "runtime-main.js": "/Sopes2_Practica1/static/js/runtime-main.5a8b919e.js",
+    "runtime-main.js.map": "/Sopes2_Practica1/static/js/runtime-main.5a8b919e.js.map",
+    "static/css/2.a9fa87b3.chunk.css": "/Sopes2_Practica1/static/css/2.a9fa87b3.chunk.css",
+    "static/js/2.56186e6b.chunk.js": "/Sopes2_Practica1/static/js/2.56186e6b.chunk.js",
+    "static/js/2.56186e6b.chunk.js.map": "/Sopes2_Practica1/static/js/2.56186e6b.chunk.js.map",
+    "index.html": "/Sopes2_Practica1/index.html",
+    "precache-manifest.d5aae53e559d3c7580aa3b20f2c884e1.js": "/Sopes2_Practica1/precache-manifest.d5aae53e559d3c7580aa3b20f2c884e1.js",
+    "service-worker.js": "/Sopes2_Practica1/service-worker.js",
+    "static/css/2.a9fa87b3.chunk.css.map": "/Sopes2_Practica1/static/css/2.a9fa87b3.chunk.css.map",
+    "static/css/main.22aea4f7.chunk.css.map": "/Sopes2_Practica1/static/css/main.22aea4f7.chunk.css.map",
+    "static/js/2.56186e6b.chunk.js.LICENSE.txt": "/Sopes2_Practica1/static/js/2.56186e6b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5a8b919e.js",
+    "static/css/2.a9fa87b3.chunk.css",
+    "static/js/2.56186e6b.chunk.js",
+    "static/css/main.22aea4f7.chunk.css",
+    "static/js/main.d6790fbf.chunk.js"
+  ]
+}
