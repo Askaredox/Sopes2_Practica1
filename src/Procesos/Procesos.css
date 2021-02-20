@@ -1,9 +1,28 @@
-.table-v{
-    /*display: flex;*/
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 80%;
-    margin: auto;
+.table-v {
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  margin: auto;
 }
 
+.arbol{
+  min-height: 350px;
+}
+
+.proc-panel > .rs-panel-heading{
+  color:white;
+  font-size: large;
+}
+
+.proc-panel{
+  text-align: left;
+}
+
+.proc-panel > *{
+  margin-left: 20px;
+}
+
+.kill{
+  float: right;
+}

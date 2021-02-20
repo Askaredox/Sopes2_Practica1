@@ -1,0 +1,10 @@
+version: 3
+services:
+  nginx:
+    build: "./nginx"
+    container_name
+
+
+
+
+    #https://easyontheweb.com/serving-a-react-application-with-nginx-and-docker/
