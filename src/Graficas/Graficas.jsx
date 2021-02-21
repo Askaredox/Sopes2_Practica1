@@ -30,26 +30,47 @@ class Graficas extends React.Component {
         }
         this.intervalo = setInterval(this.getData, 5000);
     }
-    componentDidMount(){
+    async componentDidMount(){
+        console.log('entra')
+        const res = await fetch(`http://104.198.201.4:8080/conteo`);
+        const data2 = await res.json();
+        console.log(data2)
+        this.setState({ conteo: data2 })
+        /*
         Service.conteo().then(value =>{
             this.setState({conteo:value})
-        })
+        })*/
     }
 
     componentWillUnmount() {
         clearInterval(this.intervalo);
     }
 
-    getData = () => {
+    getData = async () => {
 
         let datos = this.state.server;
         datos = datos.slice(1);
 
-        if(this.state.server)
+        if(this.state.server){
+            console.log('entra')
+            const res = await fetch(`http://104.198.201.4:8080/ram`);
+            const data2 = await res.json();
+            console.log(data2,'le pegare a Andy')
+            const DATE = new Date();
+            const HH = DATE.getHours().toString();
+            const MM = DATE.getMinutes().toString();
+            const SS = DATE.getSeconds().toString();
+            const obj={ name: `${HH}:${MM}:${SS}`, ram: data2.Porcentaje }
+            datos.push(obj)
+            this.setState({ server: datos})
+        }
+        /*
             Service.ram().then(value => {
+                console.log('Algo')
                 datos.push(value);
                 this.setState({ server: datos })
             });
+            */
 
     }
 

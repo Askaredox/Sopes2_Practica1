@@ -48,11 +48,12 @@ class Procesos extends React.Component {
       </div>
     );
   }
-  get_data = ()=>{
-    Service.cpu().then(value => {
-      let processes = this.process_to_tree(value);
-      this.setState({data: processes })
-    });
+  get_data = async ()=>{
+
+    const res = await fetch(`http://104.198.201.4:8080/cpu`);
+    const data2 = await res.json();
+    let processes = this.process_to_tree(data2);
+    this.setState({data: processes })
   }
 
   process_to_tree=(pr)=>{
@@ -77,8 +78,8 @@ class Procesos extends React.Component {
     this.setState({proc:val})
   }
 
-  onKill=(val)=>{
-    Service.kill(val);
+  onKill=async (val)=>{
+    const res = await fetch(`http://104.198.201.4:8080/kill/${val}`);
     this.get_data();
   }
 
