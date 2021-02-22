@@ -1,6 +1,5 @@
 import React from "react";
 import "./Procesos.css";
-import Service from '../http-service';
 
 import { Tree, Panel, Placeholder, Button } from "rsuite";
 

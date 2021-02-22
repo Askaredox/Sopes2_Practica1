@@ -1,7 +1,6 @@
 import React from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Legend } from 'recharts';
 import './Graficas.css';
-import Service from '../http-service';
 
 import { Divider } from 'rsuite';
 
@@ -28,22 +27,20 @@ class Graficas extends React.Component {
                 "Zombie": 0
             }
         }
-        this.intervalo = setInterval(this.getData, 5000);
+        this.intervalo = setInterval(this.getData, 3000);
+        this.intervalo2 = setInterval(this.getConteo, 3000);
     }
-    async componentDidMount(){
-        console.log('entra')
+
+    getConteo = async () => {
         const res = await fetch(`http://104.198.201.4:8080/conteo`);
         const data2 = await res.json();
         console.log(data2)
         this.setState({ conteo: data2 })
-        /*
-        Service.conteo().then(value =>{
-            this.setState({conteo:value})
-        })*/
     }
 
     componentWillUnmount() {
         clearInterval(this.intervalo);
+        clearInterval(this.intervalo2);
     }
 
     getData = async () => {
