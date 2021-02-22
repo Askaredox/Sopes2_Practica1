@@ -48,7 +48,7 @@ class Procesos extends React.Component {
     );
   }
   get_data = async ()=>{
-
+    this.setState({data:[]})
     const res = await fetch(`http://104.198.201.4:8080/cpu`);
     const data2 = await res.json();
     let processes = this.process_to_tree(data2);
@@ -78,10 +78,22 @@ class Procesos extends React.Component {
   }
 
   onKill=async (val)=>{
-    const res = await fetch(`http://104.198.201.4:8080/kill/${val}`);
-    const data2 = await res.json();
-    console.log(data2);
-    this.get_data();
+    console.log('trying to kill process');
+    try{
+      const res = await fetch(`http://104.198.201.4:8080/kill/${val}`);
+      const data2 = await res.json();
+      console.log(data2);
+    }
+    catch(e){
+      console.log(e);
+    }
+    finally{
+      await this.sleep(1000);
+      this.get_data();
+    }
+  }
+  sleep = async(ms)=>{
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
 
