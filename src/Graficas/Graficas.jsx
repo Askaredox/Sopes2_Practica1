@@ -49,10 +49,8 @@ class Graficas extends React.Component {
         datos = datos.slice(1);
 
         if(this.state.server){
-            console.log('entra')
             const res = await fetch(`http://104.198.201.4:8080/ram`);
             const data2 = await res.json();
-            console.log(data2,'le pegare a Andy')
             const DATE = new Date();
             const HH = DATE.getHours().toString();
             const MM = DATE.getMinutes().toString();

@@ -79,9 +79,10 @@ class Procesos extends React.Component {
 
   onKill=async (val)=>{
     const res = await fetch(`http://104.198.201.4:8080/kill/${val}`);
+    const data2 = await res.json();
+    console.log(data2);
     this.get_data();
   }
-
 }
 
 export default Procesos;
